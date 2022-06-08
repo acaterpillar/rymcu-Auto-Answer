@@ -6,6 +6,7 @@ from setting import headers, login_url, today_url, show_answer_url, answer_url, 
 
 def auto_answer():
     login_data = {"account": account, "password": pw}
+    print(account,pw);
     user = requests.post(login_url, headers=headers, data=json.dumps(login_data)).json()
     if user['code'] == 0:
         headers['authorization'] = user['data']['user']['token']
